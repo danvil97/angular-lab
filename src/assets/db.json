@@ -1,0 +1,64 @@
+{
+  "pokemons": [
+    {
+      "name": "bulbasaur",
+      "id": 1,
+      "damage": 10
+    },
+    {
+      "name": "ivysaur",
+      "id": 2,
+      "damage": 20
+    },
+    {
+      "name": "venusaur",
+      "id": 3,
+      "damage": 30
+    },
+    {
+      "name": "charmander",
+      "id": 4,
+      "damage": 40
+    },
+    {
+      "name": "charmeleon",
+      "id": 5,
+      "damage": 50
+    },
+    {
+      "name": "charizard",
+      "id": 6,
+      "damage": 88
+    },
+    {
+      "name": "squirtle",
+      "id": 7,
+      "damage": 72
+    },
+    {
+      "name": "wartortle",
+      "id": 8,
+      "damage": 40
+    },
+    {
+      "name": "blastoise",
+      "id": 9,
+      "damage": 30
+    },
+    {
+      "name": "caterpie",
+      "id": 10,
+      "damage": 63
+    },
+    {
+      "name": "metapod",
+      "id": 11,
+      "damage": 32
+    },
+    {
+      "name": "butterfree",
+      "id": 12,
+      "damage": 75
+    }
+  ]
+}

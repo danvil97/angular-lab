@@ -1,0 +1,17 @@
+<div class="card" [ngClass]="{ 'card-red': pokemon.damage > 50 }">
+  <img
+    src="../../assets/avatars/{{ pokemon.id }}.png"
+    class="card-img-top"
+    alt="-name- avatar"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ pokemon.name | uppercase }}</h5>
+    <p class="card-text">
+      <span class="pDamage">{{ pokemon.damage }}</span>
+    </p>
+    <a href="#" class="btn btn-primary">{{
+      pokemon.captured ? "Отпустить" : "Поймать"
+    }}</a>
+    <span>{{ idx }}</span>
+  </div>
+</div>
