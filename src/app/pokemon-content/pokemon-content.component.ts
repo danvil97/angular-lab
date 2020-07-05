@@ -13,7 +13,6 @@ interface Pokemon {
   styleUrls: ['./pokemon-content.component.scss'],
 })
 export class PokemonContentComponent implements OnInit {
-  constructor() {}
   pokemons: Pokemon[] = [
     {
       name: 'bulbasaur',
@@ -31,7 +30,7 @@ export class PokemonContentComponent implements OnInit {
       name: 'venusaur',
       id: 3,
       damage: 30,
-      captured: false,
+      captured: true,
     },
     {
       name: 'charmander',
@@ -43,7 +42,7 @@ export class PokemonContentComponent implements OnInit {
       name: 'charmeleon',
       id: 5,
       damage: 50,
-      captured: false,
+      captured: true,
     },
     {
       name: 'charizard',
@@ -61,13 +60,13 @@ export class PokemonContentComponent implements OnInit {
       name: 'wartortle',
       id: 8,
       damage: 40,
-      captured: false,
+      captured: true,
     },
     {
       name: 'blastoise',
       id: 9,
       damage: 30,
-      captured: false,
+      captured: true,
     },
     {
       name: 'caterpie',
@@ -88,6 +87,11 @@ export class PokemonContentComponent implements OnInit {
       captured: false,
     },
   ];
+  cardViewToggle = false;
+  constructor() {}
 
   ngOnInit(): void {}
+  onToggleChange(flag: boolean) {
+    this.cardViewToggle = flag;
+  }
 }
