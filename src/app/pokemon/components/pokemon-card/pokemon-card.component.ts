@@ -1,14 +1,18 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-pokemon-card',
   templateUrl: './pokemon-card.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./pokemon-card.component.scss'],
 })
 export class PokemonCardComponent implements OnInit {
   @Input() pokemon;
   @Input() gridView;
-  constructor() {}
+
+  constructor() {
+  }
+
   handleClick(pokemon: any) {
     pokemon.captured = !pokemon.captured;
     console.log(
@@ -17,5 +21,7 @@ export class PokemonCardComponent implements OnInit {
       }`
     );
   }
-  ngOnInit(): void {}
+
+  ngOnInit(): void {
+  }
 }
