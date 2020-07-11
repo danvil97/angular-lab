@@ -17,10 +17,22 @@ export class PokemonContentComponent implements OnInit {
   ngOnInit(): void {
     this.getPokemons();
   }
-  getPokemons(){
+
+  getPokemons() {
     this.pokemons = this.pokemonsService.getAll();
   }
+
   onToggleChange(flag: boolean) {
     this.cardViewToggle = flag;
+  }
+
+  onButtonClick(pokemon: Pokemon) {
+    pokemon.captured = !pokemon.captured;
+
+    console.log(
+      `Покемон ${pokemon.name.toUpperCase()} был ${
+        pokemon.captured ? 'пойман' : 'отпущен'
+      }`
+    );
   }
 }

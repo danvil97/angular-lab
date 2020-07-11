@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -9,17 +9,12 @@ import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 export class PokemonCardComponent implements OnInit {
   @Input() pokemon;
   @Input() gridView;
-
+  @Output() onButtonClick = new EventEmitter();
   constructor() {
   }
 
   handleClick(pokemon: any) {
-    pokemon.captured = !pokemon.captured;
-    console.log(
-      `Покемон ${pokemon.name.toUpperCase()} был ${
-        pokemon.captured ? 'пойман' : 'отпущен'
-      }`
-    );
+    this.onButtonClick.emit(pokemon)
   }
 
   ngOnInit(): void {
