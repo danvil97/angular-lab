@@ -1,5 +1,5 @@
-<div class="row ">
-  <div class="gridToggler">
+<div class="toolsRow row">
+  <div class="toolsRow__gridToggler">
     <i class="fas fa-bars"></i>
     <input
       type="checkbox"
@@ -11,6 +11,13 @@
     <label for="toggle" class="switch">
     </label>
     <i class="fas fa-border-all"></i>
+  </div>
+  <div class="toolsRow__search">
+    <mat-form-field class="">
+      <mat-label>Search</mat-label>
+      <input placeholder="Which pokemon do you want to find?" matInput type="search">
+    </mat-form-field>
+    <button mat-button color="primary">Search</button>
   </div>
 </div>
 <div class="row justify-content-around">

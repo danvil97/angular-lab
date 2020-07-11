@@ -6,6 +6,7 @@ import {PokemonCardComponent} from "./components/pokemon-card/pokemon-card.compo
 import {DamageDirective} from "./directives/damage.directive";
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
+import {MatInputModule} from "@angular/material/input";
 
 
 
@@ -17,7 +18,8 @@ import {MatButtonModule} from "@angular/material/button";
   imports: [
     CommonModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatInputModule
   ],
   exports:[
     PokemonContentComponent
