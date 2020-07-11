@@ -7,6 +7,7 @@ import {DamageDirective} from "./directives/damage.directive";
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
+import { PokemonSearchComponent } from './components/pokemon-search/pokemon-search.component';
 
 
 
@@ -14,7 +15,8 @@ import {MatInputModule} from "@angular/material/input";
   declarations: [
     PokemonContentComponent,
     PokemonCardComponent,
-    DamageDirective,],
+    DamageDirective,
+    PokemonSearchComponent,],
   imports: [
     CommonModule,
     MatCardModule,

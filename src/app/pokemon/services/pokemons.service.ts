@@ -89,12 +89,17 @@ export class PokemonsService {
   constructor() {
   }
 
+  filter(name: string) {
+    const result = this.pokemons.filter(el => el.name === name);
+    return this.pokemons.filter(el => el.name === name);
+  }
+
   getAll() {
     return this.pokemons;
   }
 
   getById(id: number) {
-    const result = this.pokemons.filter(el=>el.id===id);
+    const result = this.pokemons.filter(el => el.id === id);
     return result;
   }
 }
