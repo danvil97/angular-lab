@@ -87,7 +87,7 @@ export class PokemonContentComponent implements OnInit {
       captured: false,
     },
   ];
-  cardViewToggle = false;
+  cardViewToggle = true;
   constructor() {}
 
   ngOnInit(): void {}

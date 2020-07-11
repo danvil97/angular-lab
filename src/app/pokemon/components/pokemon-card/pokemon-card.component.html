@@ -9,16 +9,17 @@
     <p class="card-text">
       <span class="pDamage">{{ pokemon.damage }}</span>
     </p>
-    <button href="#" class="btn btn-primary" (click)="handleClick(pokemon)">
+    <button class="btn btn-primary" (click)="handleClick(pokemon)">
       {{ pokemon.captured ? "Отпустить" : "Поймать" }}
     </button>
   </div>
 </div>
 
+<!-- listView-->
 <div *ngIf="!gridView" [appDamage]="pokemon.damage" class="cardList">
   <span>{{ pokemon.name | uppercase }}</span>
   <span class="pDamage">{{ pokemon.damage }}</span>
-  <button href="#" class="btn btn-primary" (click)="handleClick(pokemon)">
+  <button class="btn btn-primary" (click)="handleClick(pokemon)">
     {{ pokemon.captured ? "Отпустить" : "Поймать" }}
   </button>
 </div>

@@ -1,14 +1,19 @@
-<div class="row flex-row-reverse">
-  Grid
-  <input
-    type="checkbox"
-    id="toggle"
-    class="checkbox"
-    (change)="onToggleChange($event.target.checked)"
-  />
-  <label for="toggle" class="switch"></label>List
+<div class="row ">
+  <div class="gridToggler">
+    <i class="fas fa-bars"></i>
+    <input
+      type="checkbox"
+      id="toggle"
+      class="checkbox"
+      checked
+      (change)="onToggleChange($event.target.checked)"
+    />
+    <label for="toggle" class="switch">
+    </label>
+    <i class="fas fa-border-all"></i>
+  </div>
 </div>
-<div class="row justify-content-center">
+<div class="row">
   <app-pokemon-card
     *ngFor="let pokemon of pokemons"
     [pokemon]="pokemon"
