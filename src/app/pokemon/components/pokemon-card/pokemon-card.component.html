@@ -1,25 +1,24 @@
-<div class="card" [appDamage]="pokemon.damage" *ngIf="gridView">
-  <img
-    src="../../assets/avatars/{{ pokemon.id }}.png"
-    class="card-img-top"
-    alt="{{ pokemon.name }} avatar"
-  />
-  <div class="card-body">
-    <h5 class="card-title">{{ pokemon.name | uppercase }}</h5>
-    <p class="card-text">
-      <span class="pDamage">{{ pokemon.damage }}</span>
-    </p>
-    <button class="btn btn-primary" (click)="handleClick(pokemon)">
-      {{ pokemon.captured ? "Отпустить" : "Поймать" }}
-    </button>
-  </div>
+<div class="cardGrid" [appDamage]="pokemon.damage" *ngIf="gridView">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{pokemon.name| uppercase}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="../../assets/avatars/{{ pokemon.id }}.png" alt="{{pokemon.name}} image">
+    <mat-card-content>
+      <span [appDamage]="pokemon.damage" class="cardGrid__dmg">{{pokemon.damage}}</span>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="handleClick(pokemon)">
+        {{ pokemon.captured ? "Отпустить" : "Поймать" }}
+      </button>
+    </mat-card-actions>
+  </mat-card>
 </div>
-
 <!-- listView-->
 <div *ngIf="!gridView" [appDamage]="pokemon.damage" class="cardList">
   <span>{{ pokemon.name | uppercase }}</span>
-  <span class="pDamage">{{ pokemon.damage }}</span>
-  <button class="btn btn-primary" (click)="handleClick(pokemon)">
+  <span [appDamage]="pokemon.damage" class="cardGrid__dmg">{{ pokemon.damage }}</span>
+  <button mat-raised-button color="primary" (click)="handleClick(pokemon)">
     {{ pokemon.captured ? "Отпустить" : "Поймать" }}
   </button>
 </div>

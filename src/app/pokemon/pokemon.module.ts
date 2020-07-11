@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import {PokemonContentComponent} from "./components/pokemon-content/pokemon-content.component";
 import {PokemonCardComponent} from "./components/pokemon-card/pokemon-card.component";
 import {DamageDirective} from "./directives/damage.directive";
+import {MatCardModule} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
 
 
 
@@ -13,7 +15,9 @@ import {DamageDirective} from "./directives/damage.directive";
     PokemonCardComponent,
     DamageDirective,],
   imports: [
-    CommonModule
+    CommonModule,
+    MatCardModule,
+    MatButtonModule
   ],
   exports:[
     PokemonContentComponent
