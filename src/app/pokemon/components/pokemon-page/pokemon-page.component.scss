@@ -1,0 +1,16 @@
+h1{
+  margin:0 20px 0 0;
+}
+.description {
+  &__details {
+    margin-top: 50px;
+
+    ul {
+      font-size: 20px;
+    }
+  }
+
+  &__actions {
+    margin-top: 50px;
+  }
+}

@@ -8,6 +8,10 @@
   span{
     font-size: 1.5em;
   }
+  &__header{
+    display:flex;
+    justify-content: center;
+  }
   &__dmg {
     text-align:center;
     font-weight: bold;

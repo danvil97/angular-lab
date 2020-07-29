@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Pokemon, PokemonsService} from '../../services/pokemons.service'
+import {Pokemon, PokemonsService} from '../../services/pokemons.service';
 
 @Component({
   selector: 'app-pokemon-content',
@@ -20,6 +20,10 @@ export class PokemonContentComponent implements OnInit {
 
   getPokemons() {
     this.pokemons = this.pokemonsService.getAll();
+  }
+
+  getFilteredPokemons(name:string){
+    this.pokemons=this.pokemonsService.filterByName(name);
   }
 
   onToggleChange(flag: boolean) {

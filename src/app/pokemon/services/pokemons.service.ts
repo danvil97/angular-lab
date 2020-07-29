@@ -5,6 +5,7 @@ export interface Pokemon {
   name: string;
   damage: number;
   captured: boolean;
+  date?: string;
 }
 
 @Injectable({
@@ -17,81 +18,92 @@ export class PokemonsService {
       id: 1,
       damage: 10,
       captured: false,
+      date:"10-10-10"
     },
     {
       name: 'ivysaur',
       id: 2,
       damage: 20,
       captured: false,
+      date:"10-10-10"
     },
     {
       name: 'venusaur',
       id: 3,
       damage: 30,
       captured: true,
+      date:"10-10-10"
     },
     {
       name: 'charmander',
       id: 4,
       damage: 40,
       captured: false,
+      date:"10-10-10"
     },
     {
       name: 'charmeleon',
       id: 5,
       damage: 50,
       captured: true,
+      date:"10-10-10"
     },
     {
       name: 'charizard',
       id: 6,
       damage: 88,
       captured: false,
+      date:"10-10-10"
     },
     {
       name: 'squirtle',
       id: 7,
       damage: 72,
       captured: false,
+      date:"10-10-10"
     },
     {
       name: 'wartortle',
       id: 8,
       damage: 40,
       captured: true,
+      date:"10-10-10"
     },
     {
       name: 'blastoise',
       id: 9,
       damage: 30,
       captured: true,
+      date:"10-10-10"
     },
     {
       name: 'caterpie',
       id: 10,
       damage: 63,
       captured: false,
+      date:"10-10-10"
     },
     {
       name: 'metapod',
       id: 11,
       damage: 32,
       captured: false,
+      date:"10-10-10"
     },
     {
       name: 'butterfree',
       id: 12,
       damage: 75,
       captured: false,
+      date:"10-10-10"
     },
   ];
 
   constructor() {
   }
 
-  filter(name: string) {
-    const result = this.pokemons.filter(el => el.name === name);
-    return this.pokemons.filter(el => el.name === name);
+  filterByName(name: string) {
+    return this.pokemons.filter(el => el.name.toLowerCase().includes(name.toLowerCase()));
   }
 
   getAll() {
@@ -99,7 +111,6 @@ export class PokemonsService {
   }
 
   getById(id: number) {
-    const result = this.pokemons.filter(el => el.id === id);
-    return result;
+    return this.pokemons.find(el => el.id === +id);
   }
 }
