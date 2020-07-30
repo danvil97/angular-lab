@@ -5,7 +5,6 @@ import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-pokemon-edit',
   templateUrl: './pokemon-edit.component.html',
-  providers: [PokemonsService],
   styleUrls: ['./pokemon-edit.component.scss']
 })
 export class PokemonEditComponent implements OnInit {

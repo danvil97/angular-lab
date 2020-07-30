@@ -13,7 +13,7 @@
       <span [appDamage]="pokemon.damage" class="cardGrid__dmg">{{pokemon.damage}}</span>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="handleClick(pokemon)">
+      <button mat-raised-button color="primary" (click)="handleClick()">
         {{ pokemon.captured ? "Отпустить" : "Поймать" }}
       </button>
       <button mat-raised-button color="warning" [routerLink]="['/pokemon/',pokemon.id]">
@@ -29,7 +29,7 @@
     <span class="cardList__dmg">{{"Damage: "+ pokemon.damage }}</span></span>
 
   <div class="cardList__actions">
-  <button mat-raised-button color="primary" (click)="handleClick(pokemon)">
+  <button mat-raised-button color="primary" (click)="handleClick()">
     {{ pokemon.captured ? "Отпустить" : "Поймать" }}
   </button>
   <button mat-raised-button color="warning" [routerLink]="['/pokemon/',pokemon.id]">

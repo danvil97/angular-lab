@@ -17,6 +17,7 @@ import {PokemonEditComponent} from './components/pokemon-edit/pokemon-edit.compo
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatSelectModule} from "@angular/material/select";
 import {MatNativeDateModule} from '@angular/material/core';
+import {PokemonsService} from "./services/pokemons.service";
 
 
 @NgModule({
@@ -39,12 +40,11 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-
   ],
-  providers:[],
   exports: [
     PokemonContentComponent
-  ]
+  ],
+  providers: [PokemonsService],
 })
 export class PokemonModule {
 }

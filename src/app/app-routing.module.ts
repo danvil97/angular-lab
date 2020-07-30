@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path:'',
     component:PokemonContentComponent,
-    pathMatch:'full'
+    pathMatch: 'full'
   },
   {
     path:'pokemon/:id',

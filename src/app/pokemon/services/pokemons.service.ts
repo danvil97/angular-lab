@@ -111,10 +111,14 @@ export class PokemonsService {
   }
 
   getById(id: number) {
-    return this.pokemons.find(el => el.id === +id);
+    return this.pokemons.find((el: Pokemon) => el.id === +id);
   }
 
   updatePokemon(pokemon: Pokemon) {
-    this.pokemons[this.pokemons.findIndex(el => el.id == pokemon.id)] = {...pokemon};
+    // this.pokemons.find(el => el.id == pokemon.id) = {...pokemon};
+    console.log("______________");
+    console.log(this.pokemons);
+    this.pokemons = [...this.pokemons, pokemon];
+    console.log(this.pokemons);
   }
 }

@@ -5,12 +5,10 @@ import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-pokemon-page',
   templateUrl: './pokemon-page.component.html',
-  providers: [PokemonsService],
   styleUrls: ['./pokemon-page.component.scss']
 })
 export class PokemonPageComponent implements OnInit {
   pokemon: Pokemon;
-  @Output() onCapture: EventEmitter<Pokemon> = new EventEmitter<Pokemon>()
 
   constructor(private pokemonsService: PokemonsService, private route: ActivatedRoute) {
   }
@@ -19,8 +17,11 @@ export class PokemonPageComponent implements OnInit {
     this.getPokemon(this.route.snapshot.params.id);
   }
 
-
-  getPokemon(id: number) {
+  getPokemon(id: number): void {
     this.pokemon = this.pokemonsService.getById(id);
+  }
+
+  handleCapture(): void {
+    this.pokemon.captured = !this.pokemon.captured
   }
 }
