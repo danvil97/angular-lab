@@ -1,20 +1,22 @@
 <div class="row edit">
   <div class="edit__inputs">
-    <form [formGroup]="pokemonForm">
+    <form [formGroup]="pokemonForm" (ngSubmit)="submitHandler()">
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Name</mat-label>
           <input matInput placeholder="Pokemon Name" formControlName="name">
           <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
           <mat-hint>Edit name for this pokemon</mat-hint>
+          <mat-error *ngIf="name.invalid&&name.touched">Enter correct name</mat-error>
         </mat-form-field>
       </p>
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Damage</mat-label>
-          <input matInput placeholder="Damage" type="number" formControlName="damage">
+          <input matInput placeholder="Damage" type="number" min="1" formControlName="damage">
           <mat-icon matSuffix>offline_bolt</mat-icon>
           <mat-hint>Edit damage for this pokemon</mat-hint>
+          <mat-error *ngIf="damage.invalid&&damage.touched">Damage must be >0</mat-error>
         </mat-form-field>
       </p>
       <p>
@@ -34,10 +36,11 @@
           <input matInput [matDatepicker]="dp3" formControlName="date">
           <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
           <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+          <mat-error *ngIf="date.invalid&&date.touched">Date must be entered</mat-error>
         </mat-form-field>
       </p>
       <div class="edit__inputs-actions">
-        <button mat-raised-button color="primary">Save</button>
+        <button mat-raised-button color="primary" [disabled]="pokemonForm.invalid" type="submit">Save</button>
         <button mat-raised-button color="accent">Cancel</button>
       </div>
     </form>
