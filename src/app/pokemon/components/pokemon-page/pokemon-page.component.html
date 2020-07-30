@@ -12,7 +12,7 @@
     </div>
     <div class="row description__details">
       <ul>
-        <li>Damage: {{pokemon.damage}}</li>
+        <li>Damage: <span class="damage" [appDamage]="pokemon.damage">{{pokemon.damage}}</span></li>
         <li>Date: {{pokemon.date}}</li>
       </ul>
     </div>
