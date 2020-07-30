@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Pokemon, PokemonsService} from "../../services/pokemons.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {MatDialog} from '@angular/material/dialog';
+
 import * as moment from 'moment';
 
 @Component({
@@ -13,7 +15,7 @@ export class PokemonEditComponent implements OnInit {
   pokemon: Pokemon;
   pokemonForm: FormGroup;
 
-  constructor(private pokemonsService: PokemonsService, private route: ActivatedRoute, private fb: FormBuilder) {
+  constructor(private pokemonsService: PokemonsService, private route: ActivatedRoute, private fb: FormBuilder, private dialog: MatDialog, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -46,11 +48,27 @@ export class PokemonEditComponent implements OnInit {
     this.pokemon.name = this.pokemonForm.value.name;
     this.pokemon.damage = this.pokemonForm.value.damage;
     this.pokemon.captured = this.pokemonForm.value.captured;
-    this.pokemon.date = this.pokemonForm.value.date;
+    this.pokemon.date = moment(this.pokemonForm.value.date).format("MM/DD/YYYY");
+    this.openSaveDialog();
+  }
+
+  openSaveDialog() {
+    const dialogRef = this.dialog.open(DialogSaved);
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.router.navigate(['/pokemon/' + this.pokemon.id]);
+    });
   }
 
 
   getPokemon(id: number) {
     this.pokemon = this.pokemonsService.getById(id);
   }
+}
+
+@Component({
+  selector: 'dialog-saved',
+  templateUrl: 'dialog-saved.html',
+})
+export class DialogSaved {
 }

@@ -13,10 +13,11 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {RouterModule} from "@angular/router";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatIconModule} from "@angular/material/icon";
-import {PokemonEditComponent} from './components/pokemon-edit/pokemon-edit.component';
+import {DialogSaved, PokemonEditComponent} from './components/pokemon-edit/pokemon-edit.component';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatSelectModule} from "@angular/material/select";
 import {MatNativeDateModule} from '@angular/material/core';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -26,9 +27,11 @@ import {MatNativeDateModule} from '@angular/material/core';
     DamageDirective,
     PokemonSearchComponent,
     PokemonPageComponent,
-    PokemonEditComponent,],
+    PokemonEditComponent,
+    DialogSaved],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     MatCardModule,
     MatButtonModule,
     MatInputModule,
@@ -39,7 +42,7 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-    ReactiveFormsModule,
+    MatDialogModule,
   ],
   exports: [
     PokemonContentComponent
