@@ -11,13 +11,12 @@ import {PokemonSearchComponent} from './components/pokemon-search/pokemon-search
 import {PokemonPageComponent} from './components/pokemon-page/pokemon-page.component';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {RouterModule} from "@angular/router";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatIconModule} from "@angular/material/icon";
 import {PokemonEditComponent} from './components/pokemon-edit/pokemon-edit.component';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatSelectModule} from "@angular/material/select";
 import {MatNativeDateModule} from '@angular/material/core';
-import {PokemonsService} from "./services/pokemons.service";
 
 
 @NgModule({
@@ -40,11 +39,11 @@ import {PokemonsService} from "./services/pokemons.service";
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
+    ReactiveFormsModule,
   ],
   exports: [
     PokemonContentComponent
   ],
-  providers: [PokemonsService],
 })
 export class PokemonModule {
 }
