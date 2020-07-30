@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {CoreModule} from "./core/core.module";
 import {PokemonModule} from "./pokemon/pokemon.module";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {UnsavedChangesGuard} from "./pokemon/guards/unsaved-changes.guard";
 
 
 @NgModule({

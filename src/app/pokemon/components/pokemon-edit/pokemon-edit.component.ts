@@ -49,7 +49,12 @@ export class PokemonEditComponent implements OnInit {
     this.pokemon.damage = this.pokemonForm.value.damage;
     this.pokemon.captured = this.pokemonForm.value.captured;
     this.pokemon.date = moment(this.pokemonForm.value.date).format("MM/DD/YYYY");
+    this.pokemonForm.markAsUntouched()
     this.openSaveDialog();
+  }
+
+  cancelHandler() {
+    this.router.navigate(['/pokemon/' + this.pokemon.id]);
   }
 
   openSaveDialog() {
