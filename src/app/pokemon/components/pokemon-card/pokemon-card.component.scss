@@ -24,11 +24,25 @@
 }
 .cardList {
   border: 1px solid rgba(0, 0, 0, 0.125);
-  padding: 10px 0px;
-  min-width: 60vw;
+  padding: 10px 0;
+  min-width:600px;
   max-width: 60vw;
-  margin-top:20px;
+  margin-bottom: 20px;
   text-align: center;
+  display:flex;
+  justify-content: space-around;
+  align-items:center;
+
+  &__dmg{
+    color:grey;
+  }
+
+  &__image{
+      width: 100px;
+  }
+
+  &__actions{
+  }
   span {
     margin: 10px;
   }

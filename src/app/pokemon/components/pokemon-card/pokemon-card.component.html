@@ -19,8 +19,11 @@
 </div>
 <!-- listView-->
 <div *ngIf="!gridView" [appDamage]="pokemon.damage" class="cardList">
-  <span>{{ pokemon.name | uppercase }}</span>
-  <span [appDamage]="pokemon.damage" class="cardGrid__dmg">{{ pokemon.damage }}</span>
+  <img class="cardList__image" src="../../assets/avatars/{{ pokemon.id }}.png" alt="{{pokemon.name}} image">
+  <span>{{ pokemon.name | uppercase }}<br>
+    <span class="cardList__dmg">{{"Damage: "+ pokemon.damage }}</span></span>
+
+  <div class="cardList__actions">
   <button mat-raised-button color="primary" (click)="handleClick(pokemon)">
     {{ pokemon.captured ? "Отпустить" : "Поймать" }}
   </button>
@@ -29,5 +32,5 @@
   </button>
   <button mat-icon-button color="primary" aria-label="Example icon button with a menu icon">
     <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
-  </button>
+  </button></div>
 </div>
