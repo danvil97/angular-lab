@@ -10,6 +10,7 @@ export class PokemonCardComponent implements OnInit {
   @Input() pokemon;
   @Input() gridView;
   @Output() onButtonClick = new EventEmitter();
+
   constructor() {
   }
 

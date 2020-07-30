@@ -22,8 +22,8 @@ export class PokemonContentComponent implements OnInit {
     this.pokemons = this.pokemonsService.getAll();
   }
 
-  getFilteredPokemons(name:string){
-    this.pokemons=this.pokemonsService.filterByName(name);
+  getFilteredPokemons(name: string) {
+    this.pokemons = this.pokemonsService.filterByName(name);
   }
 
   onToggleChange(flag: boolean) {
