@@ -14,88 +14,88 @@ export interface Pokemon {
 export class PokemonsService {
   private pokemons: Pokemon[] = [
     {
-      name: 'bulbasaur',
       id: 1,
+      name: 'bulbasaur',
       damage: 10,
       captured: false,
-      date:"10-10-10"
+      date: "7/10/2020"
     },
     {
-      name: 'ivysaur',
       id: 2,
+      name: 'ivysaur',
       damage: 20,
       captured: false,
-      date:"10-10-10"
+      date: "6/10/2020"
     },
     {
-      name: 'venusaur',
       id: 3,
+      name: 'venusaur',
       damage: 30,
       captured: true,
-      date:"10-10-10"
+      date: "5/10/2020"
     },
     {
-      name: 'charmander',
       id: 4,
+      name: 'charmander',
       damage: 40,
       captured: false,
-      date:"10-10-10"
+      date: "3/12/2020"
     },
     {
-      name: 'charmeleon',
       id: 5,
+      name: 'charmeleon',
       damage: 50,
       captured: true,
-      date:"10-10-10"
+      date: "2/22/2020"
     },
     {
-      name: 'charizard',
       id: 6,
+      name: 'charizard',
       damage: 88,
       captured: false,
-      date:"10-10-10"
+      date: "2/22/2020"
     },
     {
-      name: 'squirtle',
       id: 7,
+      name: 'squirtle',
       damage: 72,
       captured: false,
-      date:"10-10-10"
+      date: "2/22/2020"
     },
     {
-      name: 'wartortle',
       id: 8,
+      name: 'wartortle',
       damage: 40,
       captured: true,
-      date:"10-10-10"
+      date: "2/22/2020"
     },
     {
-      name: 'blastoise',
       id: 9,
+      name: 'blastoise',
       damage: 30,
       captured: true,
-      date:"10-10-10"
+      date: "2/22/2020"
     },
     {
-      name: 'caterpie',
       id: 10,
+      name: 'caterpie',
       damage: 63,
       captured: false,
-      date:"10-10-10"
+      date: "2/22/2020"
     },
     {
-      name: 'metapod',
       id: 11,
+      name: 'metapod',
       damage: 32,
       captured: false,
-      date:"10-10-10"
+      date: "2/22/2020"
     },
     {
-      name: 'butterfree',
       id: 12,
+      name: 'butterfree',
       damage: 75,
       captured: false,
-      date:"10-10-10"
+      date: "2/22/2020"
     },
   ];
 

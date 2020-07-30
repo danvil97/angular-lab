@@ -16,6 +16,11 @@
   &__header{
     display:flex;
     justify-content: center;
+    mat-card-title{
+      display: flex;
+      align-items: center;
+    }
+
   }
   &__dmg {
     text-align:center;

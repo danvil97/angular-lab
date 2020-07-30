@@ -1,7 +1,12 @@
 <div *ngIf="gridView" [appDamage]="pokemon.damage" class="cardGrid">
   <mat-card>
     <mat-card-header class="cardGrid__header">
-      <mat-card-title>{{pokemon.name| uppercase}}</mat-card-title>
+      <mat-card-title>{{pokemon.name| uppercase}}
+        <button mat-icon-button color="primary" aria-label="Edit button" [routerLink]="['/edit/',pokemon.id]">
+          <mat-icon aria-hidden="false" aria-label="Edit icon">create</mat-icon>
+        </button>
+      </mat-card-title>
+
     </mat-card-header>
     <img mat-card-image src="../../assets/avatars/{{ pokemon.id }}.png" alt="{{pokemon.name}} image">
     <mat-card-content>
@@ -30,7 +35,7 @@
   <button mat-raised-button color="warning" [routerLink]="['/pokemon/',pokemon.id]">
     Подробнее
   </button>
-    <button mat-icon-button color="primary" aria-label="Edit button">
+    <button mat-icon-button color="primary" aria-label="Edit button" [routerLink]="['/edit/',pokemon.id]">
       <mat-icon aria-hidden="false" aria-label="Edit icon">create</mat-icon>
     </button>
   </div>

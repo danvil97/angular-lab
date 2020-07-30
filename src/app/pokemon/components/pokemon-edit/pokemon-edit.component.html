@@ -1,0 +1,47 @@
+<div class="row edit">
+  <div class="edit__inputs">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Pokemon Name" value="{{pokemon.name|titlecase}}">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        <mat-hint>Edit name for this pokemon</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Damage</mat-label>
+        <input matInput placeholder="Damage" type="number" value="{{pokemon.damage}}">
+        <mat-icon matSuffix>offline_bolt</mat-icon>
+        <mat-hint>Edit damage for this pokemon</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Capture Status</mat-label>
+        <mat-select value="{{pokemon.captured}}">
+          <mat-option value="true">Captured</mat-option>
+          <mat-option value="false">Free</mat-option>
+        </mat-select>
+        <mat-icon matSuffix>archive</mat-icon>
+        <mat-hint>Edit capture status for this pokemon</mat-hint>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Creation date</mat-label>
+        <input matInput [matDatepicker]="dp3">
+        <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+        <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+      </mat-form-field>
+    </p>
+    <div class="edit__inputs-actions">
+      <button mat-raised-button color="primary">Save</button>
+      <button mat-raised-button color="accent">Cancel</button>
+    </div>
+
+  </div>
+  <div class="edit__image">
+    <img mat-card-image src="../../assets/avatars/{{ pokemon.id }}.png" alt="{{pokemon.name}} image">
+  </div>
+</div>
