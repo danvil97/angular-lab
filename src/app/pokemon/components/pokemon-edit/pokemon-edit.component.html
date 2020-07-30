@@ -1,6 +1,6 @@
 <div class="row edit">
   <div class="edit__inputs">
-    <form [formGroup]="pokemonForm">
+    <form [formGroup]="pokemonForm" (ngSubmit)="submitHandler()">
       <p>
         <mat-form-field appearance="outline">
           <mat-label>Name</mat-label>
@@ -40,10 +40,10 @@
         </mat-form-field>
       </p>
       <div class="edit__inputs-actions">
-        <button mat-raised-button color="primary" [disabled]="pokemonForm.invalid" (click)="submitHandler()">Save
+        <button mat-raised-button color="primary" [disabled]="pokemonForm.invalid" type="submit">Save
         </button>
 
-        <button mat-raised-button color="accent" (click)="cancelHandler()">Cancel</button>
+        <button mat-raised-button color="accent" (click)="cancelHandler()" type="reset">Cancel</button>
 
       </div>
     </form>
