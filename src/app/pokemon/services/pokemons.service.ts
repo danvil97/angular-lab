@@ -5,7 +5,7 @@ export interface Pokemon {
   name: string;
   damage: number;
   captured: boolean;
-  date?: string;
+  date: string;
 }
 
 @Injectable({

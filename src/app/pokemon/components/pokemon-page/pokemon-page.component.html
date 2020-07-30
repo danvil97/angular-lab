@@ -1,4 +1,5 @@
-<div class="row" *ngIf="pokemon">
+<div class="row gradient-border" *ngIf="pokemon">
+
   <div class="col">
     <img src="../../assets/avatars/{{ pokemon.id }}.png" alt="{{pokemon.name}} image">
   </div>
@@ -12,7 +13,7 @@
     <div class="row description__details">
       <ul>
         <li>Damage: {{pokemon.damage}}</li>
-        <li *ngIf="pokemon.date">Date: {{pokemon.date}}</li>
+        <li>Date: {{pokemon.date}}</li>
       </ul>
     </div>
     <div class="row description__actions">

@@ -17,7 +17,7 @@
         {{ pokemon.captured ? "Release" : "Capture" }}
       </button>
       <button mat-raised-button color="warning" [routerLink]="['/pokemon/',pokemon.id]">
-        Подробнее
+        More...
       </button>
     </mat-card-actions>
   </mat-card>
@@ -33,7 +33,7 @@
       {{ pokemon.captured ? "Release" : "Capture" }}
     </button>
     <button mat-raised-button color="warning" [routerLink]="['/pokemon/',pokemon.id]">
-      Подробнее
+      More...
     </button>
     <button mat-icon-button color="primary" aria-label="Edit button" [routerLink]="['/edit/',pokemon.id]">
       <mat-icon aria-hidden="false" aria-label="Edit icon">create</mat-icon>
