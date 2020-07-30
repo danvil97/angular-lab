@@ -2,6 +2,11 @@
   max-width: 240px;
   margin-top:20px;
   text-align: center;
+  mat-card-actions{
+    display: flex;
+    justify-content: space-around;
+  }
+
   img{
     border-top:1px solid #636379;
   }

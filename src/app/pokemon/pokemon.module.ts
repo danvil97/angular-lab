@@ -12,6 +12,7 @@ import { PokemonPageComponent } from './components/pokemon-page/pokemon-page.com
 import {MatGridListModule} from "@angular/material/grid-list";
 import {RouterModule} from "@angular/router";
 import {FormsModule} from "@angular/forms";
+import {MatIconModule} from "@angular/material/icon";
 
 
 
@@ -30,6 +31,7 @@ import {FormsModule} from "@angular/forms";
     MatGridListModule,
     RouterModule,
     FormsModule,
+    MatIconModule,
 
   ],
   exports:[

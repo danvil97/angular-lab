@@ -1,5 +1,8 @@
-<mat-form-field class="">
-  <mat-label>Search</mat-label>
-  <input placeholder="Which pokemon do you want to find?" matInput type="search" [(ngModel)]="name">
-</mat-form-field>
-<button mat-button color="primary" (click)="filterName()">Search</button>
+<div class="searchPanel">
+  <mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon>
+  <mat-form-field class="">
+    <mat-label>Search</mat-label>
+    <input placeholder="Which pokemon do you want to find?" matInput type="search" [(ngModel)]="name">
+  </mat-form-field>
+  <button mat-button color="primary" (click)="filterName()">Search</button>
+</div>
