@@ -13,8 +13,8 @@
       <span [appDamage]="pokemon.damage" class="cardGrid__dmg">{{pokemon.damage}}</span>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="handleClick()">
-        {{ pokemon.captured ? "Отпустить" : "Поймать" }}
+      <button data-testid="captureButton" mat-raised-button color="primary" (click)="handleClick()">
+        {{ pokemon.captured ? "Release" : "Capture" }}
       </button>
       <button mat-raised-button color="warning" [routerLink]="['/pokemon/',pokemon.id]">
         Подробнее
@@ -26,15 +26,15 @@
 <div *ngIf="!gridView" [appDamage]="pokemon.damage" class="cardList">
   <img class="cardList__image" src="../../assets/avatars/{{ pokemon.id }}.png" alt="{{pokemon.name}} image">
   <span>{{ pokemon.name | uppercase }}<br>
-    <span class="cardList__dmg">{{"Damage: "+ pokemon.damage }}</span></span>
+    <span class="cardList__dmg">{{"Damage: " + pokemon.damage }}</span></span>
 
   <div class="cardList__actions">
-  <button mat-raised-button color="primary" (click)="handleClick()">
-    {{ pokemon.captured ? "Отпустить" : "Поймать" }}
-  </button>
-  <button mat-raised-button color="warning" [routerLink]="['/pokemon/',pokemon.id]">
-    Подробнее
-  </button>
+    <button mat-raised-button color="primary" (click)="handleClick()">
+      {{ pokemon.captured ? "Release" : "Capture" }}
+    </button>
+    <button mat-raised-button color="warning" [routerLink]="['/pokemon/',pokemon.id]">
+      Подробнее
+    </button>
     <button mat-icon-button color="primary" aria-label="Edit button" [routerLink]="['/edit/',pokemon.id]">
       <mat-icon aria-hidden="false" aria-label="Edit icon">create</mat-icon>
     </button>
