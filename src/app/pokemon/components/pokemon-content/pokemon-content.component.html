@@ -1,6 +1,6 @@
 <div class="toolsRow row">
   <div class="toolsRow__gridToggler">
-    <i class="fas fa-bars"></i>
+    <mat-icon aria-hidden="false" aria-label="List icon ">view_list</mat-icon>
     <input
       type="checkbox"
       id="toggle"
@@ -10,10 +10,10 @@
     />
     <label for="toggle" class="switch">
     </label>
-    <i class="fas fa-border-all"></i>
+    <mat-icon aria-hidden="false" aria-label="Grid icon">view_module</mat-icon>
   </div>
   <div class="toolsRow__search">
-    <app-pokemon-search></app-pokemon-search>
+    <app-pokemon-search (searchValue)="getFilteredPokemons($event)"></app-pokemon-search>
   </div>
 </div>
 <div class="row justify-content-around">
@@ -24,3 +24,4 @@
     (onButtonClick)="onButtonClick($event)"
   ></app-pokemon-card>
 </div>
+

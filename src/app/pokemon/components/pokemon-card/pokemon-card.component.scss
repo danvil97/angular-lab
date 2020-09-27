@@ -2,11 +2,20 @@
   max-width: 240px;
   margin-top:20px;
   text-align: center;
+  mat-card-actions{
+    display: flex;
+    justify-content: space-around;
+  }
+
   img{
     border-top:1px solid #636379;
   }
   span{
     font-size: 1.5em;
+  }
+  &__header{
+    display:flex;
+    justify-content: center;
   }
   &__dmg {
     text-align:center;
@@ -20,11 +29,25 @@
 }
 .cardList {
   border: 1px solid rgba(0, 0, 0, 0.125);
-  padding: 10px 0px;
-  min-width: 60vw;
+  padding: 10px 0;
+  min-width:600px;
   max-width: 60vw;
-  margin-top:20px;
+  margin-bottom: 20px;
   text-align: center;
+  display:flex;
+  justify-content: space-around;
+  align-items:center;
+
+  &__dmg{
+    color:grey;
+  }
+
+  &__image{
+      width: 100px;
+  }
+
+  &__actions{
+  }
   span {
     margin: 10px;
   }
