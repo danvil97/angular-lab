@@ -1,8 +1,11 @@
 .navbar {
   background-color: #fff;
+  margin:10px 0px;
   &__logo {
     width: 140px;
     padding-left: 10px;
     padding-right: 10px;
+  }
+  &__link{
   }
 }

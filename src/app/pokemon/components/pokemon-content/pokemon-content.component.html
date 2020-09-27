@@ -1,0 +1,26 @@
+<div class="toolsRow row">
+  <div class="toolsRow__gridToggler">
+    <i class="fas fa-bars"></i>
+    <input
+      type="checkbox"
+      id="toggle"
+      class="checkbox"
+      checked
+      (change)="onToggleChange($event.target.checked)"
+    />
+    <label for="toggle" class="switch">
+    </label>
+    <i class="fas fa-border-all"></i>
+  </div>
+  <div class="toolsRow__search">
+    <app-pokemon-search></app-pokemon-search>
+  </div>
+</div>
+<div class="row justify-content-around">
+  <app-pokemon-card
+    *ngFor="let pokemon of pokemons"
+    [pokemon]="pokemon"
+    [gridView]="cardViewToggle"
+    (onButtonClick)="onButtonClick($event)"
+  ></app-pokemon-card>
+</div>

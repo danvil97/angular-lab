@@ -1,19 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Injectable} from '@angular/core';
 
-interface Pokemon {
+export interface Pokemon {
   id: number;
   name: string;
   damage: number;
   captured: boolean;
 }
 
-@Component({
-  selector: 'app-pokemon-content',
-  templateUrl: './pokemon-content.component.html',
-  styleUrls: ['./pokemon-content.component.scss'],
+@Injectable({
+  providedIn: 'root'
 })
-export class PokemonContentComponent implements OnInit {
-  pokemons: Pokemon[] = [
+export class PokemonsService {
+  private pokemons: Pokemon[] = [
     {
       name: 'bulbasaur',
       id: 1,
@@ -87,11 +85,21 @@ export class PokemonContentComponent implements OnInit {
       captured: false,
     },
   ];
-  cardViewToggle = false;
-  constructor() {}
 
-  ngOnInit(): void {}
-  onToggleChange(flag: boolean) {
-    this.cardViewToggle = flag;
+  constructor() {
+  }
+
+  filter(name: string) {
+    const result = this.pokemons.filter(el => el.name === name);
+    return this.pokemons.filter(el => el.name === name);
+  }
+
+  getAll() {
+    return this.pokemons;
+  }
+
+  getById(id: number) {
+    const result = this.pokemons.filter(el => el.id === id);
+    return result;
   }
 }
