@@ -1,21 +1,28 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {PokemonPageComponent} from 'src/app/pokemon/components/pokemon-page/pokemon-page.component'
 import {PokemonContentComponent} from "./pokemon/components/pokemon-content/pokemon-content.component";
+import {PokemonEditComponent} from "./pokemon/components/pokemon-edit/pokemon-edit.component";
+import {UnsavedChangesGuard} from "./pokemon/guards/unsaved-changes.guard";
 
 const routes: Routes = [
   {
-    path:'pokemon/:id',
-    component:PokemonPageComponent
+    path: '',
+    component: PokemonContentComponent,
+    pathMatch: 'full'
   },
   {
-    path:'',
-    component:PokemonContentComponent,
-    pathMatch:'full'
+    path: 'pokemon/:id',
+    component: PokemonPageComponent
   },
   {
-    path:'search/:name',
-    component:PokemonContentComponent
+    path: 'edit/:id',
+    component: PokemonEditComponent,
+    canDeactivate: [UnsavedChangesGuard]
+  },
+  {
+    path: 'search/:name',
+    component: PokemonContentComponent
   }
 ];
 
@@ -23,4 +30,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

@@ -4,7 +4,6 @@ import {Pokemon, PokemonsService} from '../../services/pokemons.service';
 @Component({
   selector: 'app-pokemon-content',
   templateUrl: './pokemon-content.component.html',
-  providers: [PokemonsService],
   styleUrls: ['./pokemon-content.component.scss'],
 })
 export class PokemonContentComponent implements OnInit {
@@ -22,8 +21,8 @@ export class PokemonContentComponent implements OnInit {
     this.pokemons = this.pokemonsService.getAll();
   }
 
-  getFilteredPokemons(name:string){
-    this.pokemons=this.pokemonsService.filterByName(name);
+  getFilteredPokemons(name: string) {
+    this.pokemons = this.pokemonsService.filterByName(name);
   }
 
   onToggleChange(flag: boolean) {

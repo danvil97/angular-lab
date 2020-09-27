@@ -1,20 +1,23 @@
 import {ChangeDetectionStrategy, Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import {Pokemon} from "../../services/pokemons.service";
 
 @Component({
   selector: 'app-pokemon-card',
   templateUrl: './pokemon-card.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./pokemon-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PokemonCardComponent implements OnInit {
   @Input() pokemon;
   @Input() gridView;
-  @Output() onButtonClick = new EventEmitter();
+  @Output() onButtonClick: EventEmitter<Pokemon> = new EventEmitter<Pokemon>();
+
   constructor() {
   }
 
-  handleClick(pokemon: any) {
-    this.onButtonClick.emit(pokemon)
+  handleClick() {
+
+    this.onButtonClick.emit(this.pokemon)
   }
 
   ngOnInit(): void {

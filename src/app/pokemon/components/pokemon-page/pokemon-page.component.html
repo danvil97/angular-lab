@@ -1,23 +1,24 @@
-<div class="row" *ngIf="pokemon">
+<div class="row gradient-border" *ngIf="pokemon">
+
   <div class="col">
     <img src="../../assets/avatars/{{ pokemon.id }}.png" alt="{{pokemon.name}} image">
   </div>
   <div class="col">
     <div class="row justify-content-center align-items-center">
       <h1>{{pokemon.name|uppercase}}</h1>
-      <button mat-icon-button color="primary" aria-label="Edit button">
+      <button mat-icon-button color="primary" aria-label="Edit button" [routerLink]="['/edit/',pokemon.id]">
         <mat-icon aria-hidden="false" aria-label="Edit icon">create</mat-icon>
       </button>
     </div>
     <div class="row description__details">
       <ul>
-        <li>Damage: {{pokemon.damage}}</li>
-        <li *ngIf="pokemon.date">Date: {{pokemon.date}}</li>
+        <li>Damage: <span class="damage" [appDamage]="pokemon.damage">{{pokemon.damage}}</span></li>
+        <li>Date: {{pokemon.date}}</li>
       </ul>
     </div>
     <div class="row description__actions">
-      <button mat-raised-button color="primary">
-        {{ pokemon.captured ? "Отпустить" : "Поймать" }}
+      <button mat-raised-button color="primary" (click)="handleCapture()">
+        {{ pokemon.captured ? "Release" : "Capture" }}
       </button>
     </div>
   </div>
