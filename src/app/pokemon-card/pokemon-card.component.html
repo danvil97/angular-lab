@@ -1,0 +1,24 @@
+<div class="card" [appDamage]="pokemon.damage" *ngIf="gridView">
+  <img
+    src="../../assets/avatars/{{ pokemon.id }}.png"
+    class="card-img-top"
+    alt="{{ pokemon.name }} avatar"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ pokemon.name | uppercase }}</h5>
+    <p class="card-text">
+      <span class="pDamage">{{ pokemon.damage }}</span>
+    </p>
+    <button href="#" class="btn btn-primary" (click)="handleClick(pokemon)">
+      {{ pokemon.captured ? "Отпустить" : "Поймать" }}
+    </button>
+  </div>
+</div>
+
+<div *ngIf="!gridView" [appDamage]="pokemon.damage" class="cardList">
+  <span>{{ pokemon.name | uppercase }}</span>
+  <span class="pDamage">{{ pokemon.damage }}</span>
+  <button href="#" class="btn btn-primary" (click)="handleClick(pokemon)">
+    {{ pokemon.captured ? "Отпустить" : "Поймать" }}
+  </button>
+</div>

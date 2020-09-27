@@ -6,19 +6,20 @@ import { AppComponent } from './app.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { PokemonHeaderComponent } from './pokemon-header/pokemon-header.component';
 import { PokemonContentComponent } from './pokemon-content/pokemon-content.component';
+import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
+import { DamageDirective } from './damage.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonComponent,
     PokemonHeaderComponent,
-    PokemonContentComponent
+    PokemonContentComponent,
+    PokemonCardComponent,
+    DamageDirective,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
